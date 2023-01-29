@@ -1,0 +1,89 @@
+SECTION 4
+
+-Create a new proyect from the OS terminal = expo init NameOfTheFolder (create the proyect)
+-changed the expo version :) to Dependenccies "expo": "~46.0.13" then "npm install" .
+ fix problem!(No upgrade Ios simulator required)
+-numbers in = {}      <TextInput style={styles.numberInput} maxLength={2}/>
+- maxLength={2}
+- android_ripple= efect when press a button on Android
+-solution efect on android :  create buttonOuterContainer 
+- overflow: 'hidden' // any effect will not show if goes outside on Android
+- elevation = shadows on Android
+- in style property can pass aobjects and arrow functions and arrayis
+style={ ({pressed}) => pressed ? [styles.buttonInnerContainer,styles.pressed]  
+: styles.buttonInnerContainer}
+-Flex (default) = column
+-View = Take space as need it for the content
+-Backgraund
+-Gradient : expo Lineargradient extra library :)
+-Image Background
+-imageStyle={styles.backgroundImage} transparency
+-props multiple
+-Alert import = is an object
+Alert.alert(
+            'Incalid number',
+            'Number has to be a number between 1 and 99.',
+            [{text:'Okay',style:'destructivge', onPress: resetInputHandler }] // button
+            )
+- swithing screens
+-export a constant :) constant folder can put dificult to understand "colours codes" 
+-"bind" conect functions to jsx code
+ <PrimaryButton myOnPress={nextGuessHandler.bind(this,'lower')} > + </PrimaryButton>
+ -this = content
+ -It takes a first value 'lower':)
+ -Game logic = function random nummer 
+-logic when game is over
+-(box = card) generic /  making reusable cod / container = backgraund
+-box in the start screen , make reusable in ui/ Card 
+- new componentts / Card + IntructionText
+-overraiding styles (IntructionText) cascade style 
+function IntructionText({children, myStyle}){
+    return <Text style={[styles.intructionText, myStyle]}> {children} </Text>;
+}
+-Order can change to style={[myStyle, styles.intructionText]}
+-EXPO-ICONS DOCUMENTATION - FREE ICONS :)
+-FONTS -  expo install expo-font 
+-Fonts is a hook
+- fonts expo-documentation
+-Loading screen splatsh _ expo install expo-app-loading (component)
+- game over screen (revisar)
+-Text inside the text :) nested text
+-What is shadowOffset in react-native?
+- shadowOffset 
+-flat list scrollable :) LOG
+
+Conclusion 
+
+1 Definir UI and logic (Objects) (figma)
+
+2 analizis del proyecto antes de crearlo 
+
+- Identificar codigo que se repetira = reutilizable 
+- Identificar posibles constantes ex. colors codes
+- Definir carpetas - estructura del proyecto 
+
+SECTION 5
+
+-Dinamyc width : maxWidth: '80%' // It is means it takes 80% of the parent
+-Dimation API fix problem with smalest devices
+-Dimentions API + Ternary operations :)
+-Dimentions API with Images
+-Adjusting Landscape Orientation 
+-In app.json = "orientation": "portrait",
+- useWindowsDimensions Hooks = fix problem with the rendering / component states. 
+When the orientation "Landscape"screen changes!
+- useWindowsDimensions = will use when App use landscape orientation
+- Problem Ios keyboard / solution KeyboardAvoidingView (import for ios)
+- <KeyboardAvoidingView style={styles.screen}> With Styles fix the problem
+-scrollview fix problem med keyord in IOS
+-Fixing landscapemode in Gamescreen = using windowsDimentions Hook
+- //Creating a JSX fragment :) in GamesCreen
+- <></>  = a fragment
+- flagments and overriding styles in landscape mode
+-adding scrollview to gameOver screen
+-^platform^ TERNARY OPERATIONS :)
+-borderWidth: Platform.OS ==='android' ? 2 : 0, // Diferents OS
+-Platform specific files :) 
+colors.ios / colors.android = usar carpeta "colors" en todos los 
+fragmentos de codigo
+-
